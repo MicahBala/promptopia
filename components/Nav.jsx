@@ -8,12 +8,14 @@ import style from './nav.module.css'
 
 const Nav = () => {
   const { data: session } = useSession()
+
   const [providers, setProviders] = useState(null)
   const [toggleMenu, setToggleMenu] = useState(false)
 
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders()
+
       setProviders(response)
     }
     // This will allow us to signin using Google and Next-Auth

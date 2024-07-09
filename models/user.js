@@ -9,11 +9,7 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: [true, 'Please provide a username'],
-    match: [
-      /^[a-zA-Z0-9]{8,20}$/,
-      'Username must be between 8 and 20 characters and must be unique',
-    ],
-    unique: true,
+    unique: [true, 'Username already exists'],
   },
   image: {
     type: String,
